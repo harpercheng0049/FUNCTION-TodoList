@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap');
+
+$white-color: #F1F1F1;
+$grey-color: #BEC4C6;
+$blue-color: #9AD0FF;
+$dark-blue-color: #303F89;
+$black-color: #141617;
+$done-btn-color: #FB605D;
+$undone-btn-color: #1BC798;
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background: $black-color;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: $black-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0 4rem 0;
+
+  /* ========= RWD ========= */
+  @media (max-width: 414px) {
+    margin-top: 2rem;
+    padding: 2.5rem 0 2rem 0;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 3.2rem;
+    /* ========= RWD ========= */
+    @media (max-width: 1024px) {
+      margin-top: 1.2rem;
+      font-size: 2.5rem;
+    }
+    /* ========= RWD ========= */
+    @media (max-width: 414px) {
+      font-size: 2rem;
+    }
+  }
+  .status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 36%;
+    margin-top: 2.5rem;
+    /* ========= RWD ========= */
+    @media (max-width: 1024px) {
+      min-width: 45%;
+    }
+    /* ========= RWD ========= */
+    @media (max-width: 414px) {
+      flex-direction: column;
+      margin-top: 0.75rem;
+    }
+
+    .completed_box {
+      display: flex;
+      align-items: center;
+      .completed {
+        background-color:$blue-color;
+        color: $dark-blue-color;
+        font-weight: 700;
+        font-size: 1.35rem;
+        padding-top: 0.4rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        /* ========= RWD ========= */
+        @media (max-width: 1440px) {
+          font-size: 1.15rem;
+          width: 38px;
+          height: 38px;
+        }
+        @media (max-width: 1024px) {
+          font-size: 0.9rem;
+          width: 32px;
+          height: 32px;
+        }
+        @media (max-width: 414px) {
+          font-size: 0.8rem;
+          width: 28px;
+          height: 28px;
+        }
+      }
+      p {
+        color: $white-color;
+        margin-left: 0.5rem;
+        font-size: 1.4rem;
+        /* ========= RWD ========= */
+        @media (max-width: 1440px) {
+          font-size: 1.1rem;
+        }
+        @media (max-width: 1024px) {
+          font-size: 1rem;
+        }
+      }
+      /* ========= RWD ========= */
+      @media (max-width: 414px) {
+        margin-bottom: 0.6rem;
+      }
+    }
+
+    .button_box {
+      background-color: $blue-color;
+      border-radius: 1.2rem;
+      padding: 0.3rem 1.1rem;
+      &.hidden {
+        display: none;
+        background-color:transparent;
+      }
+      button {
+        color: $dark-blue-color;
+        font-weight: 700;
+        font-size: 1.35rem;
+        padding: 0.4rem;
+        margin: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        /* ========= RWD ========= */
+        @media (max-width: 1440px) {
+          font-size: 1rem;
+        }
+        @media (max-width: 1024px) {
+          font-size: 0.9rem;
+        }
+        @media (max-width: 414px) {
+          font-size: 0.8rem;
+          padding: 0.1rem;
+        }
+      }
+      @media (max-width: 414px) {
+        margin-bottom: 0.6rem;
+      }
+    }
+
+    .total_box {
+      display: flex;
+      align-items: center;
+      .total {
+        background-color:$blue-color;
+        color: $dark-blue-color;
+        font-weight: 700;
+        font-size: 1.35rem;
+        padding-top: 0.4rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        /* ========= RWD ========= */
+        @media (max-width: 1440px) {
+          font-size: 1.15rem;
+          width: 38px;
+          height: 38px;
+        }
+        @media (max-width: 1024px) {
+          font-size: 0.9rem;
+          width: 32px;
+          height: 32px;
+        }
+        @media (max-width: 414px) {
+          font-size: 0.8rem;
+          width: 28px;
+          height: 28px;
+        }
+      }
+      p {
+        color: $white-color;
+        margin-left: 0.5rem;
+        font-size: 1.4rem;
+        /* ========= RWD ========= */
+        @media (max-width: 1440px) {
+          font-size: 1.1rem;
+        }
+        @media (max-width: 1024px) {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  
+  .line {
+    border-top: 2px solid $white-color; 
+    width: 45%;
+    margin: 2rem;
+    /* ========= RWD ========= */
+    @media (max-width: 1024px) {
+      width: 60%;
+      margin: 1.5rem;
+    }
+    @media (max-width: 414px) {
+      width: 90%;
+      margin: 1rem;
+    }
+  }
+
+  .search {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    /* ========= RWD ========= */
+    @media (max-width: 1024px) {
+      width: 60%;
+    }
+    /* ========= RWD ========= */
+    @media (max-width: 414px) {
+      width: 90%;
+    }
+    input {
+      width: 100%;
+      background-color: transparent; 
+      border: 2px solid $white-color;
+      height: 3.5rem;
+      border-radius: 2.8rem;
+      color: #fff;
+      font-size: 1.4rem;
+      padding: 2rem;
+      /* ========= RWD ========= */
+      @media (max-width: 1440px) {
+        font-size: 1.15rem;
+        padding: 1.5rem;
+      }
+      /* ========= RWD ========= */
+      @media (max-width: 1024px) {
+        height: 1.8rem;
+        font-size: 0.9rem;
+        padding: 1.3rem;
+      }
+      /* ========= RWD ========= */
+      @media (max-width: 414px) {
+        flex-grow: 2;
+        height: 2.5rem;
+        padding: 1rem 0 1rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+    button {
+      min-width: 70px;
+      background-color:$white-color;
+      padding: 14px 0.1px;
+      margin: 0 0 0 0.6rem;
+      font-weight: 700;
+      font-size: 2rem;
+      border-radius: 5rem;
+      border: transparent;
+      cursor: pointer;
+      /* ========= RWD ========= */
+      @media (max-width: 1440px) {
+        min-width: 60px;
+        padding: 10px 0.1px;
+      }
+      /* ========= RWD ========= */
+      @media (max-width: 1024px) {
+        font-size: 1.5rem;
+        min-width: 45px;
+        padding: 8px 0px;
+      }
+      /* ========= RWD ========= */
+      @media (max-width: 414px) {
+        min-width: 40px;
+        padding: 8px 0.1px;
+        margin: 0 0 0 0.3rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .todoList {
+    width: 45%;
+    margin-top: 1.5rem;
+    /* ========= RWD ========= */
+    @media (max-width: 1440px) {
+      margin-top: 1.2rem;
+    }
+    /* ========= RWD ========= */
+    @media (max-width: 1024px) {
+      width: 60%;
+      margin-top: 1rem;
+    }
+    /* ========= RWD ========= */
+    @media (max-width: 414px) {
+      margin-top: 0.5rem;
+      width: 90%;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 6rem;
+      list-style: none; 
+      border-radius: 1.8rem;
+      background-color: $white-color;
+      margin-top: 1.2rem;
+      /* ========= RWD ========= */
+      @media (max-width: 1440px) {
+        height: 5rem;
+      }
+      /* ========= RWD ========= */
+      @media (max-width: 1024px) {
+        height: 3.8rem;
+        margin-top: 0.8rem;
+      }
+      /* ========= RWD ========= */
+      @media (max-width: 414px) {
+        margin-top: 0.5rem;
+        min-height: 4.5rem;
+        height: auto;
+      }
+
+      .text_box {
+        width: 60%;
+        font-size: 1.5rem;
+        letter-spacing: 0rem;
+        padding: 1rem;
+        word-wrap: break-word;
+        /* ========= RWD ========= */
+        @media (max-width: 1440px) {
+         font-size: 1.2rem;
+        }
+        /* ========= RWD ========= */
+        @media (max-width: 1024px) {
+          font-size: 1.1rem;
+        }
+        /* ========= RWD ========= */
+        @media (max-width: 414px) {
+          width: 60%;
+          font-size: 1rem;
+          padding: 0.5rem;
+        }
+      }
+
+      .btn_box {
+        min-width: 40%;
+        min-height: 60%;
+        display: flex;
+        margin-right: 0.5rem;
+        /* ========= RWD ========= */
+        @media (max-width: 414px) {
+          height: 2.3rem;
+        }
+
+        .btn_status {
+          width: 55%;
+          background-color: $done-btn-color;
+          border: transparent;
+          border-radius: 1.4rem;
+          color: $black-color;
+          font-size: 1.1rem;
+          font-weight: 800;
+          cursor: pointer;
+          &:hover {
+            transition: 0.5s ease-in-out;
+          }
+          /* ========= RWD ========= */
+          @media (max-width: 1440px) {
+            font-size: 0.8rem;
+          }
+          /* ========= RWD ========= */
+          @media (max-width: 1024px) {
+            font-size: 0.7rem;
+          }
+          @media (max-width: 414px) {
+            font-size: 0.6rem;
+            border-radius: 0.8rem;
+          }
+        }
+        .btn_delete {
+          width: 30%;
+          background-color:$grey-color;
+          border: transparent;
+          font-weight: 600;
+          font-size: 1rem;
+          border-radius: 1.5rem;
+          cursor: pointer;
+          /* ========= RWD ========= */
+          @media (max-width: 1440px) {
+            font-size: 0.9rem;
+          }
+          /* ========= RWD ========= */
+          @media (max-width: 1024px) {
+            font-size: 0.6rem;
+          }
+          /* ========= RWD ========= */
+          @media (max-width: 414px) {
+            font-size: 0.6rem;
+            border-radius: 0.65rem;
+            margin-right: 0.5rem;
+          }
+          &:hover {
+            background-color: #141617;
+            color: #fff;
+            transition: 0.5s ease;
+          }
+        }
+      }
+    }
+  }
+}
